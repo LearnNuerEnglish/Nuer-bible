@@ -136,7 +136,7 @@ function home(){
  const [b,c,v]=votd(),L=P.last;
  return `<header class="hero"><div class="wrap"><h1>Nuer<span>Bible</span></h1><p>Thok Nath</p></div></header>
  <div class="wrap"><div class="votd"><div class="c"><small>Ka̱th ca̱ŋ ɛn walɛ · ${esc(refText(b,c,v))}</small><q>${esc(txt(b,c,v))}</q><button data-open="${esc(b)}|${c}|${v}">Kuɛnɛ rɛy buɔk</button></div></div>
- ${L?`<button class="resume" data-open="${esc(L.b)}|${L.c}|"><div><b>${esc(L.b)} ${L.c}</b><span>Wër kuɛnɛ</span></div><i>Tukdɛ</i></button>`:''}
+ ${L?`<button class="resume" data-open="${esc(L.b)}|${L.c}|"><div><b>${esc(L.b)} ${L.c}</b><span>Wër kuɛnɛ</span></div><i>Tokɛ</i></button>`:''}
  ${[['Ruac Kuɔth Ëë Wal',0,39],['Ruac Kuɔth In Thi̱a̱k',39,66]].map(([h,a,z])=>`<h2>${h}</h2><div class="books">${ORDER.slice(a,z).map(b=>{const n=META[b];return n?`<button class="book has" data-book="${esc(b)}"><div class="n">${n}</div><b>${esc(b)}</b><span>${n} ch.</span></button>`:`<button class="book off" disabled><b>${esc(b)}</b><span>Soon</span></button>`}).join('')}</div>`).join('')}</div></div>`}
 function pickView(){return `<div class="top"><div class="in"><button class="ib" data-act="closepick" aria-label="Back">${I('back')}</button><div class="t">${esc(S.book)}</div><span class="ib"></span></div></div><div class="wrap"><div class="chgrid">${chs(S.book).map(c=>`<button class="${c===S.ch?'on':''}" data-open="${esc(S.book)}|${c}|">${c}</button>`).join('')}</div></div>`}
 function reader(){
